@@ -1,0 +1,47 @@
+<div class="register_wrapper">
+
+  <div class="register_head">
+
+  </div>
+
+  <div class="register_page">
+
+    <mat-card class="register_card">
+
+      <mat-card-header>
+        <div mat-card-avatar class="register_card--logo"></div>
+        <mat-card-title>To-Do list</mat-card-title>
+        <mat-card-subtitle >Register.</mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content class="register_card--content">
+
+        <div class="validate_fieldswrapper">
+          <mat-form-field class="register_input">
+            <mat-label >Email</mat-label>
+            <input matInput [formControl]="EmailControl">
+          </mat-form-field>
+
+          <mat-form-field class="register_input">
+            <mat-label >Username</mat-label>
+            <input matInput [formControl]="UsernameControl" required>
+          </mat-form-field>
+
+          <mat-form-field class="register_input">
+            <mat-label >Password</mat-label>
+            <input matInput [formControl]="PasswordControl" required>
+          </mat-form-field>
+
+          <div class="validate_wrapper">
+            <button class="button" mat-flat-button color="primary" (click)="Register()">Register</button>
+          </div>
+
+        </div>
+
+      </mat-card-content>
+
+    </mat-card>
+
+  </div>
+
+</div>
