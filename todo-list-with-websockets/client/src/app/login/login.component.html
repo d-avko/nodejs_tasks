@@ -1,0 +1,48 @@
+<div class="login_cardwrapper" id="main">
+
+  <div class="login_head">
+
+  </div>
+
+  <div class="login_page">
+    <mat-card class="login_card">
+
+      <mat-card-header>
+        <div mat-card-avatar class="login_card--logo"></div>
+        <mat-card-title>To-Do list</mat-card-title>
+        <mat-card-subtitle >Login</mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content>
+
+        <div class="validate_fieldswrapper">
+          <mat-form-field appearance="outline">
+            <mat-label >Username:</mat-label>
+            <input matInput [formControl]="usernameControl" required>
+            <mat-error >Required</mat-error>
+          </mat-form-field>
+
+        </div>
+
+        <div class="validate_fieldswrapper">
+          <mat-form-field appearance="outline">
+            <mat-label >Password:</mat-label>
+            <input matInput [formControl]="passwordControl" required>
+            <mat-error >Required</mat-error>
+          </mat-form-field>
+
+        </div>
+
+        <div class="validate_wrapper">
+          <button class="button"
+                  mat-flat-button color="primary"
+                  (click)="SignIn()">Sign in</button>
+
+        </div>
+
+      </mat-card-content>
+
+    </mat-card>
+  </div>
+
+</div>

@@ -1,0 +1,71 @@
+
+.validate_wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 -5px;
+}
+.validate_fieldswrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5%;
+}
+
+.button {
+  margin: 0 5px;
+}
+
+.register_head {
+  height: 240px;
+  background-color: cadetblue;
+}
+
+.register_page {
+  height: 960px;
+}
+
+.register_wrapper {
+  display: block;
+  text-align: center;
+  min-height: 1200px;
+}
+
+.register_info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 3%;
+}
+
+.register_info .app_name {
+  height: 30%;
+  font-size: 48px;
+  font-weight: lighter;
+}
+
+.register_card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: -131px auto 90px;
+  width: 60%;
+}
+
+.register_card--logo {
+  background-image: url('https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80');
+  background-size: cover;
+}
+
+
+.register_input{
+  width: 50%;
+}
+
+.validate_fieldswrapper {
+  width: 100%;
+}
+
+.register_card--content{
+  width: 100%;
+}
