@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fbecf49d-05ad-4f0a-9c02-d636bc2da90e" name="Default Changelist" comment="" />
+    <list default="true" id="fbecf49d-05ad-4f0a-9c02-d636bc2da90e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/add-todoitem/add-todoitem.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/add-todoitem/add-todoitem.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/add-todoitem/add-todoitem.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/add-todoitem/add-todoitem.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/edit-todoitem/edit-todoitem.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/edit-todoitem/edit-todoitem.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/edit-todoitem/edit-todoitem.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/edit-todoitem/edit-todoitem.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/todo-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/todo-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/todo-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/todo-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/todoitem/todoitem.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/todoitem/todoitem.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/todoitem/todoitem.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/todoitem/todoitem.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/TodoListController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/TodoListController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/db/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/TodoListRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/TodoListRepository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,7 +34,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/client/todolist-angular" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/client/package.json" />
@@ -30,14 +48,27 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="javascript.nodejs.core.library.configured.version" value="12.14.0" />
+    <property name="javascript.nodejs.core.library.configured.version" value="10.15.3" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
-    <property name="ts.external.directory.path" value="C:\Users\Denni\Desktop\Study\MPP\todo-react-angular\client\node_modules\typescript\lib" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
+    <property name="ts.external.directory.path" value="C:\Users\Denni\OneDrive\Рабочий стол\Study\SPP\2-5\nodejs_tasks\todo-list-node-angular\client\node_modules\typescript\lib" />
   </component>
-  <component name="RunManager" selected="Node.js.app.js">
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="npm.start">
     <configuration name="app.js" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="app.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
@@ -80,11 +111,29 @@
       <workItem from="1582977002125" duration="2892000" />
       <workItem from="1582980372084" duration="12228000" />
       <workItem from="1583052903956" duration="10718000" />
+      <workItem from="1583064207952" duration="600000" />
+      <workItem from="1583322543347" duration="2663000" />
+      <workItem from="1583521114886" duration="3724000" />
+      <workItem from="1583745731427" duration="76000" />
+      <workItem from="1584339095102" duration="133000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="254" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583060359264">

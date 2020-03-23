@@ -10,9 +10,11 @@ export class TodoitemComponent implements OnInit {
   @Input() name: String;
   @Input() content: String;
   @Input() status: number;
+  @Input() fileUrl: string;
 
   @Output() onDeleteItem = new EventEmitter<number>();
   @Output() onEditItem = new EventEmitter<number>();
+  @Output() onDownloadFile = new EventEmitter<number>();
 
   constructor() { }
 
@@ -39,5 +41,9 @@ export class TodoitemComponent implements OnInit {
 
   EditItem() {
     this.onEditItem.emit(this.id);
+  }
+
+  DownloadItem(){
+    this.onDownloadFile.emit(this.id);
   }
 }

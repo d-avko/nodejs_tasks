@@ -16,8 +16,10 @@ class TodoListController{
 
     create(req, res){
         this.todoListRepository.create({
+            url: req.body.url,
             content: req.body.content,
-            name: req.body.name
+            name: req.body.name,
+            fileUrl: req.body.fileUrl
         }, req.decodedJwt.id)
             .then(todolist => {
                 res.json({ data: { todolist } });
@@ -33,7 +35,8 @@ class TodoListController{
             {
                 content: req.body.content,
                 status: req.body.status,
-                name: req.body.name
+                name: req.body.name,
+                fileUrl: req.body.fileUrl
             },
             req.params.id,
             req.decodedJwt.id

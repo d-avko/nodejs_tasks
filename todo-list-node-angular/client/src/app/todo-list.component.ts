@@ -15,6 +15,7 @@ class TodoItem{
   status: number;
   created_at: Date;
   modified_at: Date;
+  file_url: string;
 }
 
 @Component({
@@ -66,7 +67,8 @@ export class TodoListComponent implements OnInit{
         id: item.id,
         name: item.name,
         content: item.content,
-        status: item.status
+        status: item.status,
+        fileUrl: item.file_url
       }
     });
 
@@ -90,5 +92,17 @@ export class TodoListComponent implements OnInit{
 
   GotoLoginPage() {
     this.router.navigateByUrl('/login');
+  }
+
+  async DownloadFile(id: number) {
+    let item = this.items.find(x => x.id == id);
+
+    let blob = await this.http.get("http://localhost:3001" + item.file_url, {responseType: "blob"}).toPromise();
+
+    const url = window.URL.createObjectURL(blob);
+    let a = document.createElement('a');
+    a.download = `${item.file_url.substr(1)}`;
+    a.href = url;
+    a.click();
   }
 }

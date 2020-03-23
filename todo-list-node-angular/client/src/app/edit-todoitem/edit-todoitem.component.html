@@ -23,10 +23,18 @@
         <mat-option *ngFor="let option of options" [value]="option">{{option}}</mat-option>
       </mat-autocomplete>
     </mat-form-field>
+
+    <mat-label>File of this todo item:</mat-label>
+    <input type="text"
+           placeholder=""
+           aria-label="Number"
+           matInput
+           [formControl]="UrlControl">
   </div>
 
 </div>
 <div style="padding-left: 40px; padding-bottom: 20px"  mat-dialog-actions>
+  <input type="file" (change)="fileSelected($event)">
   <button mat-button (click)="EditItem()" cdkFocusInitial>Edit</button>
   <button mat-button (click)="Cancel()">Cancel</button>
 </div>
