@@ -5,7 +5,8 @@
   </mat-card-header>
 
   <mat-card-content>
-    <p>{{content}}</p>
+    <p style="padding: 10px">{{content}}</p>
+    <div (click)="DownloadItem()">File: {{fileUrl}}</div>
   </mat-card-content>
 
   <mat-card-actions>

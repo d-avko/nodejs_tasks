@@ -18,15 +18,15 @@ class TodoListRepository {
 
   create(item, userId){
     return this.db.perform(
-        `insert into \`TodoList\`.\`thingstodo\` (\`name\`, content, \`status\`, owner_id, created_at, modified_at) values (?) `,
-        [item.name, item.content, 0, userId, new Date().toMysqlFormat(), new Date().toMysqlFormat()]
+        `insert into \`TodoList\`.\`thingstodo\` (\`name\`, content, \`status\`, file_url, owner_id, created_at, modified_at) values (?) `,
+        [item.name, item.content, 0, item.fileUrl, userId,  new Date().toMysqlFormat(), new Date().toMysqlFormat()]
     );
   }
 
   update(item, id, userId){
     return this.db.perform(
-        `update \`TodoList\`.\`thingstodo\` set content = ?, status = ?, modified_at = ?, name = ? where id = ? and owner_id = ?`,
-        item.content, item.status, new Date().toMysqlFormat(), item.name, id, userId
+        `update \`TodoList\`.\`thingstodo\` set content = ?, status = ?, modified_at = ?, name = ?, file_url = ? where id = ? and owner_id = ?`,
+        item.content, item.status, new Date().toMysqlFormat(), item.name, item.fileUrl, id, userId
     );
   }
 

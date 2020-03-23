@@ -33,6 +33,7 @@ class Database{
                   \`content\` VARCHAR(1024) NULL,
                   \`name\` VARCHAR(1024) NULL,
                   \`owner_id\` INT NOT NULL,
+                  \`file_url\` VARCHAR(1024) NULL,
                   \`status\` INT NULL,
                   \`created_at\` DATETIME NOT NULL,
                   \`modified_at\` DATETIME NOT NULL,

@@ -27,6 +27,7 @@
 
 </div>
 <div style="padding-left: 40px; padding-bottom: 20px"  mat-dialog-actions>
+  <input type="file" (change)="fileSelected($event)">
   <button mat-button (click)="CreateItem()" cdkFocusInitial>Create</button>
   <button mat-button (click)="Cancel()">Cancel</button>
 </div>

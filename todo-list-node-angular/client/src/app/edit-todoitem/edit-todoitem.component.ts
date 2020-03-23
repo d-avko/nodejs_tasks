@@ -16,9 +16,11 @@ export class EditTodoitemComponent implements AfterContentInit, OnInit {
   @Input() name: String;
   @Input() content: String;
   @Input() status: number;
+  @Input() fileUrl: String;
 
   ContentControl = new FormControl();
   NameControl = new FormControl();
+  UrlControl = new FormControl();
   StatusControl = new FormControl();
   options = [ "Created", "In Progress", "Completed"];
 
@@ -27,6 +29,7 @@ export class EditTodoitemComponent implements AfterContentInit, OnInit {
               public snackBar: MatSnackBar, public auth: AuthService) {
     this.id = data.id;
     this.name = data.name;
+    this.fileUrl = data.fileUrl;
     this.content = data.content;
     this.status = data.status;
   }
@@ -38,6 +41,7 @@ export class EditTodoitemComponent implements AfterContentInit, OnInit {
   ngAfterContentInit(){
     this.ContentControl.setValue(this.content);
     this.NameControl.setValue(this.name);
+    this.UrlControl.setValue(this.fileUrl);
 
     if(this.status > this.options.length - 1 || this.status < 0){
       this.StatusControl.setValue("Unknown");
@@ -51,7 +55,8 @@ export class EditTodoitemComponent implements AfterContentInit, OnInit {
       await this.http.patch( `http://localhost:3001/api/todolist/${this.id}`, {
         name: this.NameControl.value,
         content: this.ContentControl.value,
-        status: this.options.indexOf(this.StatusControl.value)
+        status: this.options.indexOf(this.StatusControl.value),
+        fileUrl: this.UrlControl.value
       },
         {
           headers: this.auth.getAuthorizedHeaders()
@@ -66,5 +71,25 @@ export class EditTodoitemComponent implements AfterContentInit, OnInit {
 
   Cancel() {
     this.dialogRef.close();
+  }
+
+
+  async fileSelected($event: Event) {
+    let file = (<HTMLInputElement>$event.target).files[0];
+    let data = new FormData();
+    data.append('ffile', file);
+
+    try {
+
+      let url = await this.http.post<string>( `http://localhost:3001/upload`, data,
+        {
+          headers: this.auth.getAuthorizedHeaders()
+        }).toPromise();
+
+      this.UrlControl.setValue(url);
+    }
+    catch (e) {
+      this.snackBar.open(e.message, null, {duration: 1500});
+    }
   }
 }
