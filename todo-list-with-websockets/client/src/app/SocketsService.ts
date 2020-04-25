@@ -8,7 +8,7 @@ import {AuthService} from "./AuthService";
 })
 export class SocketsService {
   public todoItemsReceived = new EventEmitter<{success: boolean, error: string, data: Array<TodoitemComponent>}>();
-  private socket = io('http://localhost');
+  //private socket = io('http://localhost');
 
 
   constructor(private auth: AuthService) {
@@ -16,8 +16,8 @@ export class SocketsService {
   }
 
   public getTodoItems(){
-    this.socket.emit('GetTodoItems', this.auth.getToken(), (data) => {
-      this.todoItemsReceived.emit(data)
-    });
+   // this.socket.emit('GetTodoItems', this.auth.getToken(), (data) => {
+    //  this.todoItemsReceived.emit(data)
+   // });
   }
 }

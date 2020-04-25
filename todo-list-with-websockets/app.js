@@ -6,44 +6,16 @@ const cors = require("cors");
 const app = express();
 const identityController = require("./controllers/IdentityController").identityController;
 const middleware = require("./middleware/jwt-middleware");
-let io = require('socket.io')(80);
 let jwt = require('jsonwebtoken');
 const todoListRepository = require('./models/TodoListRepository').todoListRepository;
 
-io.on('connection', function (socket) {
-  socket.on('GetTodoItems', function (token, fn) {
-    if (token && token.startsWith('Bearer ')) {
-      // Remove Bearer from string
-      token = token.slice(7, token.length);
-    }
-
-    if (token) {
-      jwt.verify(token, 'examplesecret', (err, decoded) => {
-        if (err) {
-          fn({ success: false, error: 'Token was incorrect' })
-        } else {
-          todoListRepository.findAll(decoded.id).then(
-              (result) => {
-                fn( { success: true, error: null, data: result })
-              }
-          ).catch(err => {
-            fn({ success: false, error: err })
-          })
-        }
-      });
-    } else {
-      fn({ success: false, error: 'Token was incorrect' });
-    }
-  });
-});
+const expressGraphQL = require('express-graphql');
 
 const identityRoutes = express.Router(null);
 const todoRoutes = require("./routes/todoRoutes");
+const {graphQLSchema} = require("./db/GraphQLConfig");
 
 const PORT = process.env.PORT || 3001;
-app.listen(PORT, function() {
-  console.log(`listening on port ${PORT}`);
-});
 
 app.use(cors());
 app.use(logger("dev"));
@@ -58,8 +30,20 @@ app.use('/api/identity', identityRoutes);
 
 app.use('/', middleware.checkToken);
 
+app.use(
+    '/graphql',
+    expressGraphQL({
+        schema: graphQLSchema,
+        graphiql: true
+    })
+);
+
 app.use("/api/todolist", todoRoutes);
 
 app.get("*", function(req, res) {
-  res.sendFile(path.join(__dirname, "client/dist/todolist-angular", "index.html"));
+    res.sendFile(path.join(__dirname, "client/dist/todolist-angular", "index.html"));
+});
+
+app.listen(PORT, function() {
+  console.log(`listening on port ${PORT}`);
 });

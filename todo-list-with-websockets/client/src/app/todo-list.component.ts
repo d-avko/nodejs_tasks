@@ -33,17 +33,17 @@ export class TodoListComponent implements OnInit, OnDestroy{
       return;
     }
 
-    this.todoItemsSub = this.socketsService.todoItemsReceived.subscribe(x => {
-      if(x.error){
-        this.snackBar.open(x.error);
-        return
-      }
-
-      this.items = x.data;
-      console.log(this.items)
+    let response = await fetch('http://localhost:3001/graphql', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Authorization': 'Bearer ' + this.auth.getToken()
+      },
+      body: JSON.stringify({query: "{ todolist { id, name, content, status } }"})
     });
 
-    this.socketsService.getTodoItems();
+    this.items = ((await response.json()) as { data: { todolist: Array<TodoItem>}}).data.todolist;
   }
 
   CreateItem(){
